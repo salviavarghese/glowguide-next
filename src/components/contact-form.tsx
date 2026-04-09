@@ -45,10 +45,12 @@ export function ContactForm() {
 
   if (submitted) {
     return (
-      <div className="text-center p-6">
-        <h2 className="text-xl font-semibold mb-2">Thank you!</h2>
-        <p className="text-muted-foreground">
-          Your details have been submitted.
+      <div className="text-center py-4">
+        <h3 className="text-lg font-medium text-slate-800 mb-2">
+          You are in!
+        </h3>
+        <p className="text-sm text-slate-500">
+          We will send personalised skincare tips to your inbox.
         </p>
       </div>
     )
@@ -56,15 +58,19 @@ export function ContactForm() {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
         <FormField
           control={form.control}
           name="name"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Name</FormLabel>
+              <FormLabel className="text-slate-600 text-sm">Name</FormLabel>
               <FormControl>
-                <Input placeholder="Your name" {...field} />
+                <Input
+                  placeholder="Your name"
+                  className="rounded-xl border-slate-200 focus:border-blue-300"
+                  {...field}
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -75,16 +81,23 @@ export function ContactForm() {
           name="email"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Email</FormLabel>
+              <FormLabel className="text-slate-600 text-sm">Email</FormLabel>
               <FormControl>
-                <Input placeholder="you@example.com" {...field} />
+                <Input
+                  placeholder="you@example.com"
+                  className="rounded-xl border-slate-200 focus:border-blue-300"
+                  {...field}
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
           )}
         />
-        <Button type="submit" className="w-full bg-blue-400 hover:bg-blue-500 text-white rounded-xl">
-          Submit
+        <Button
+          type="submit"
+          className="w-full bg-blue-400 hover:bg-blue-500 text-white rounded-xl mt-2"
+        >
+          Sign up for free
         </Button>
       </form>
     </Form>
