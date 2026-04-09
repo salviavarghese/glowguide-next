@@ -83,7 +83,7 @@ export function ContactForm() {
             </FormItem>
           )}
         />
-        <Button type="submit" className="w-full">
+        <Button type="submit" className="w-full bg-blue-400 hover:bg-blue-500 text-white rounded-xl">
           Submit
         </Button>
       </form>
